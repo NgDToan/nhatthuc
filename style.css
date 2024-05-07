@@ -1,11 +1,17 @@
 body {
+    height: 100vh;
+    margin: 0;
+    background: #000;
+  }
+  
+  main {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
-}
-
-body::before {
+  }
+  
+  main::before {
     content: "";
     position: absolute;
     display: block;
@@ -16,31 +22,31 @@ body::before {
     z-index: 1;
     animation: color-switch 20s cubic-bezier(0.3, 0, 0.7, 1) both infinite;
     mix-blend-mode: screen;
-}
-
-@keyframes color-switch {
+  }
+  
+  @keyframes color-switch {
     0% {
-        background-color: #002;
+      background-color: #002;
     }
-
+  
     25% {
-        background-color: #002;
+      background-color: #002;
     }
-
+  
     50% {
-        background-color: #001;
+      background-color: #001;
     }
-
+  
     75% {
-        background-color: #002;
+      background-color: #002;
     }
-
+  
     100% {
-        background-color: #002;
+      background-color: #002;
     }
-}
-
-.sun-wrapper {
+  }
+  
+  .sun-wrapper {
     --size: 50vmin;
     width: 100%;
     height: 100%;
@@ -48,15 +54,15 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.sun-wrapper-blur {
+  }
+  
+  .sun-wrapper.blur {
     filter: blur(3vmin);
     mix-blend-mode: screen;
-}
-
-.sun,
-.moon {
+  }
+  
+  .sun,
+  .moon {
     width: var(--size);
     height: var(--size);
     position: absolute;
@@ -64,14 +70,14 @@ body::before {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: var(--size);
-}
-
-.sun {
+  }
+  
+  .sun {
     background-color: gold;
     animation: flare 20s cubic-bezier(0.3, 0, 0.7, 1) both infinite;
-}
-
-.moon {
+  }
+  
+  .moon {
     width: calc(var(--size) + 1vmin);
     height: calc(var(--size) + 1vmin);
     background-color: black;
@@ -79,67 +85,67 @@ body::before {
     transform: translate(-20%, -30%);
     animation: eclipse 20s cubic-bezier(0.3, 0, 0.7, 1) both infinite;
     animation-name: eclipse, reflect;
-}
-
-@keyframes eclipse {
+  }
+  
+  @keyframes eclipse {
     0% {
-        transform: translate(calc(-50% + 80vw), 0%);
+      transform: translate(calc(-50% + 80vw), 0%);
     }
-
+  
     50% {
-        transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
     }
-
+  
     100% {
-        transform: translate(calc(-50% - 80vw), -100%);
+      transform: translate(calc(-50% - 80vw), -100%);
     }
-}
-
-@keyframes flare {
+  }
+  
+  @keyframes flare {
     0% {
-        box-shadow: 0px 0px 5vmin gold;
-        background-color: gold
+      box-shadow: 0px 0px 5vmin gold;
+      background-color: gold;
     }
-
+  
     25% {
-        box-shadow: 0px 0px 5vmin gold;
-        background-color: gold;
+      box-shadow: 0px 0px 5vmin gold;
+      background-color: gold;
     }
-
+  
     50% {
-        box-shadow: 0px 0px 10vmin orangered;
-        background-color: orangered;
+      box-shadow: 0px 0px 10vmin orangered;
+      background-color: orangered;
     }
-
+  
     75% {
-        box-shadow: 0px 0px 5vmin gold;
-        background-color: gold;
+      box-shadow: 0px 0px 5vmin gold;
+      background-color: gold;
     }
-
+  
     100% {
-        box-shadow: 0px 0px 5vmin gold;
-        background-color: gold;
+      box-shadow: 0px 0px 5vmin gold;
+      background-color: gold;
     }
-}
-
-@keyframes reflect {
+  }
+  
+  @keyframes reflect {
     0% {
-        box-shadow: 4vmin 2vmin 4vmin -6vmin inset gold;
+      box-shadow: 4vmin 2vmin 4vmin -6vmin inset gold;
     }
-
+  
     25% {
-        box-shadow: 4vmin 2vmin 4vmin -6vmin inset gold;
+      box-shadow: 4vmin 2vmin 4vmin -6vmin inset gold;
     }
-
+  
     50% {
-        box-shadow: 0vmin 0vmin 4vmin 0vmin orangered;
+      box-shadow: 0vmin 0vmin 4vmin 0vmin inset orangered;
     }
-
+  
     75% {
-        box-shadow: -4vmin -2vmin 4vmin -6vmin inset gold;
+      box-shadow: -4vmin -2vmin 4vmin -6vmin inset gold;
     }
-    
+  
     100% {
-        box-shadow: -4vmin -2vmin -4vmin -6vmin gold;
+      box-shadow: -4vmin -2vmin 4vmin -6vmin inset gold;
     }
-}
+  }
